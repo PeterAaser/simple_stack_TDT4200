@@ -1,0 +1,15 @@
+# Some tests
+push 10 push 10 push 10 should be 30
+push 1 push 2 pop push 3 push 5 pop push 5 push 5 should be 14
+push 1 pop should be 0
+
+# A test ensuring both stack extend and shrinkage
+push 2 push 2 push 2 push 2 push 2 pop pop pop pop push 3 push 4 push 5 push 6 push 8 push 3 push 3 push 5 push 6 push 8 push 10 push 2 pop pop pop push 111111 should be 111156
+
+# A test that should fail with PARSE ERROR
+push 1 pop 2 should be PARSE ERROR
+
+push 1 pop should be 1
+
+# A faulty test
+push 1 pop 2 pop should be 20
